@@ -17,13 +17,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Event',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=200)),
                 ('start_at', models.DateTimeField()),
                 ('description', models.TextField()),
                 ('contact', models.EmailField(max_length=254)),
                 ('location', models.CharField(max_length=400)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='events', to=settings.AUTH_USER_MODEL)),
+                ('author', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                 related_name='events', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
